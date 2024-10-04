@@ -2,3 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: auto;
+}
+
+html, body {
+    width: 100%;
+    /* height: 1000vh; */
+    background: black;
+    color: white;
+    font-family: sans-serif;
+}
