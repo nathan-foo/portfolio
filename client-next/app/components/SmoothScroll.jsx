@@ -16,7 +16,11 @@ const SmoothScroll = () => {
         }
 
         requestAnimationFrame(raf);
-    });
+
+        return () => {
+            lenis.destroy();
+        };
+    }, []);
 };
 
 export default SmoothScroll;

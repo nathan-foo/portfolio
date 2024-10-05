@@ -16,7 +16,7 @@ export default function Home() {
             <div className="loader-content">
                 <div className="loader-text"><p>Loader Content</p></div>
             </div> */}
-            <div className="site-content relative">
+            <div className="site-content">
                 <Navbar />
                 <Hero />
                 <About />
