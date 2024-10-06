@@ -40,7 +40,7 @@ const MagneticButton = ({ children, width, height }) => {
         });
     });
     return (
-        <button style={{ width, height }} className={`magnetic cursor-pointer`}>
+        <button style={{ width, height }} className={`magnetic cursor-pointer anti-mask`}>
             <span>{children}</span>
         </button>
     );

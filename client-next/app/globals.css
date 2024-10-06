@@ -12,7 +12,19 @@
 html, body {
     width: 100%;
     /* height: 1000vh; */
-    background: black;
+    background: white;
+    color: #191919;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.pointer-effect {
+    mask-image: url('./public/mask.svg');
+    mask-repeat: no-repeat;
+    mask-size: 40px;
+    background: #191919;
+    cursor: default;
+}
+
+.mask {
     color: white;
-    font-family: sans-serif;
 }

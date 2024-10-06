@@ -4,8 +4,8 @@ import MagneticButton from "../components/MagneticButton";
 
 const Navbar = () => {
     return (
-        <nav className="w-[100%] py-0 px-8 flex absolute z-10">
-            <div className="flex flex-1 justify-start">
+        <nav className="w-[100%] py-0 px-8 flex absolute z-50">
+            <div className="flex flex-1 justify-start p-1">
                 <MagneticButton width={'6rem'} height={'4rem'}>
                     nathan foo
                 </MagneticButton>

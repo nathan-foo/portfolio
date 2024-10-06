@@ -1,13 +1,47 @@
-import About from "./sections/About";
-import Contact from "./sections/Contact";
-import Footer from "./sections/Footer";
-import Hero from "./sections/Hero";
+"use client";
+
+import { useGSAP } from "@gsap/react";
+import { gsap, Power4 } from "gsap";
+
 import Navbar from "./sections/Navbar";
-import Work from "./sections/Work";
+import Body from "./sections/Body";
+import BodyMask from "./sections/BodyMask";
 
 export default function Home() {
+    useGSAP(() => {
+        const antiMasks = document.querySelectorAll('.anti-mask');
+        const pointer = document.querySelector('.pointer-effect');
+
+        antiMasks.forEach((antiMask) => {
+            const scaleDown = (event) => {
+                const { clientX, clientY } = event;
+
+                gsap.set(pointer, {
+                    transformOrigin: `${clientX}px ${clientY}px`,
+                });
+
+                gsap.to(pointer, {
+                    duration: 0.5,
+                    scale: 0,
+                    ease: Power4.out,
+                });
+            };
+
+            const scaleUp = () => {
+                gsap.to(pointer, {
+                    duration: 0.5,
+                    scale: 1,
+                    ease: [.16, .44, .3, .99],
+                });
+            };
+
+            antiMask.addEventListener('mousemove', scaleDown);
+            antiMask.addEventListener('mouseleave', scaleUp);
+        });
+    });
+
     return (
-        <div className="wrapper">
+        <div className="wrapper relative">
             {/* <div className="pre-loader">
                 <div className="loader">
                     Loader
@@ -16,13 +50,10 @@ export default function Home() {
             <div className="loader-content">
                 <div className="loader-text"><p>Loader Content</p></div>
             </div> */}
-            <div className="site-content">
+            <div className="site-content relative">
                 <Navbar />
-                <Hero />
-                <About />
-                <Work />
-                <Contact />
-                <Footer />
+                <Body />
+                <BodyMask />
             </div>
         </div>
     );
